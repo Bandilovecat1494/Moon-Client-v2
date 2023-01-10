@@ -1,6 +1,6 @@
-wait(0.04)
+wait(0.01)
 local Body = "HumanoidRootPart"
-
+--Creo's Reanimate Fling/Requires Reanimate For my Fling
 local Added = false
 local Model = game.Players.LocalPlayer.Character.Model
 local Humanoid = Model:WaitForChild(Body)
@@ -10,8 +10,8 @@ Humanoid.att0_HumanoidRootPart.AlignOrientation:Destroy()
 local Hoster = Instance.new("SelectionBox")
 Hoster.Visible = true
 Hoster.Parent = Humanoid
-Hoster.Color3 = Color3.fromRGB(0,0,0)
-Hoster.LineThickness = 0.05
+Hoster.Color3 = Color3.fromRGB(242,7,125)
+Hoster.LineThickness = 0.03
 Hoster.Adornee = Humanoid
 local Fling = Instance.new("BodyGyro")
 Fling.P = -8
