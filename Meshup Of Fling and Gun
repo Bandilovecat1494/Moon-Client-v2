@@ -190,7 +190,6 @@ game.Players.LocalPlayer.CharacterAdded:Connect(function(a)
 end)
 --Now BodyLook--
 local Body = Instance.new("BodyGyro")
-Head.Size = Vector3.new(1,1,2)
 Body.P = 9000
 Body.D = 0
 Body.Parent = game.Players.LocalPlayer.Character.Torso
@@ -199,4 +198,14 @@ game["Run Service"].Heartbeat:Connect(function()
 	local root = game.Players.LocalPlayer.Character.HumanoidRootPart
 	Body.CFrame = CFrame.new(root.Position, Vector3.new(CFrame.new(mouse.Hit.p).X, root.CFrame.Y, CFrame.new(mouse.Hit.p).Z))
 	Body.MaxTorque = Vector3.new(100000000000,1000000000000,1000000000000)
+end)
+Mouse:Connect(function(a)
+	if Added == false then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.att1_HumanoidRootPart.WorldCFrame = game.Players.LocalPlayer:GetMouse().Hit
+		wait(0.2) 
+		game.Players.LocalPlayer.Character.HumanoidRootPart.att1_HumanoidRootPart.Position = Vector3.new(0,5,0)
+	end		
+end)
+game.Players.LocalPlayer.CharacterAdded:Connect(function(a)
+    Added = true
 end)
