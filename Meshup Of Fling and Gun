@@ -19,7 +19,7 @@ Fling.D = -400
 Fling.CFrame = CFrame.new(9000000000,9000000000,9000000000)
 Fling.Parent = Humanoid
 local Input = game.UserInputService
-Fling.MaxTorque = Vector3.new(-9000000,0,0)
+Fling.MaxTorque = Vector3.new(-90000,0,0)
 --Then Rig Setter--
 local BackPack = game.Players.LocalPlayer.Character.Model:WaitForChild("BackpackAccessory")
 --BackPack.Handle.SpecialMesh:Destroy()
@@ -173,7 +173,6 @@ WeldConstraint.Name = "WeldConstraint"
 WeldConstraint.Parent = Torso 
 WeldConstraint.Part0 = Torso 
 WeldConstraint.Part1 = LA
-wait(0.1)
 local Weld = Instance.new("Weld")
 Weld.Part0 = Torso
 Weld.Part1 = game.Players.LocalPlayer.Character.Torso
