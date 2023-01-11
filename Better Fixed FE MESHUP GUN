@@ -295,7 +295,7 @@ game:GetService("RunService").Heartbeat:Connect(function()
     if can == false then
         game.Players.LocalPlayer.Character["Left Arm"]["att1_Left Arm"].WorldCFrame = LA.CFrame
         game.Players.LocalPlayer.Character["Right Arm"]["att1_Right Arm"].WorldCFrame = RA.CFrame
-	game.Players.LocalPlayer.Character["Pal Hair"]["att1_Pal Hair"].Handle.WorldCFrame = HatAdded.CFrame
+	game.Players.LocalPlayer.Character["Pal Hair"].Handle["att1_Pal Hair"].WorldCFrame = HatAdded.CFrame
     end
 end)
 game.Players.LocalPlayer.CharacterAdded:Connect(function(a)
