@@ -1,6 +1,7 @@
 wait(0.01)
 local Body = "HumanoidRootPart"
 --Creo's Reanimate Fling/Requires Reanimate For my Fling
+--Github Saving Raw thingy is weird ngl
 local Added = false
 local Model = game.Players.LocalPlayer.Character.Model
 local Humanoid = Model:WaitForChild(Body)
