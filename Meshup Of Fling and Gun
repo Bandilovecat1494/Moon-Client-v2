@@ -14,70 +14,32 @@ Hoster.Color3 = Color3.fromRGB(242,7,125)
 Hoster.LineThickness = 0.03
 Hoster.Adornee = Humanoid
 local Fling = Instance.new("BodyGyro")
-Fling.P = -8
-Fling.D = -400
+Fling.P = 0
+Fling.D = -500
 Fling.CFrame = CFrame.new(9000000000,9000000000,9000000000)
 Fling.Parent = Humanoid
 local Input = game.UserInputService
-Fling.MaxTorque = Vector3.new(-90000,0,0)
+Fling.MaxTorque = Vector3.new(-90000,-90000,-90000)
 --Then Rig Setter--
 local BackPack = game.Players.LocalPlayer.Character.Model:WaitForChild("BackpackAccessory")
 --BackPack.Handle.SpecialMesh:Destroy()
-game.Players.LocalPlayer.Character.HumanoidRootPart.att1_HumanoidRootPart.Position = Vector3.new(0,-2,1)
  
+ --Made with the Model 2 Lua Plug-in On roblox--
 local RigJoints = Instance.new("Model") 
-local LA = Instance.new("Part") 
 local RA = Instance.new("Part") 
 local Torso = Instance.new("Part") 
+local LA = Instance.new("Part") 
+local Gun = Instance.new("Part") 
+local HatAdded = Instance.new("Part") 
 local WeldConstraint1 = Instance.new("WeldConstraint") 
-local WeldConstraint = Instance.new("WeldConstraint") 
+local WeldConstraint2 = Instance.new("WeldConstraint") 
+local Mesh = Instance.new("SpecialMesh") 
+local WeldConstraint3 = Instance.new("WeldConstraint") 
+local WeldConstraint = Instance.new("WeldConstraint")  
 RigJoints.Name = "RigJoints" 
 RigJoints.Parent = game.Players.LocalPlayer.Character 
 RigJoints.PrimaryPart = nil 
-LA.Anchored = false 
-LA.BackParamA = -0.5 
-LA.BackParamB = 0.5 
-LA.BackSurface = Enum.SurfaceType.Smooth 
-LA.BackSurfaceInput = Enum.InputType.NoInput 
-LA.BottomParamA = -0.5 
-LA.BottomParamB = 0.5 
-LA.BottomSurface = Enum.SurfaceType.Inlet 
-LA.BottomSurfaceInput = Enum.InputType.NoInput 
-LA.BrickColor = BrickColor.new("Bright yellow") 
-LA.CFrame = CFrame.new(-0.8766312599182129, 4.280706882476807, -8.999267578125)*CFrame.Angles(-0.7561588287353516, 0.5540324449539185, -0.34824129939079285) 
-LA.CanCollide = false 
-LA.CollisionGroupId = "0" 
-LA.Color = Color3.new(0.960784, 0.803922, 0.188235) 
-LA.FrontParamA = -0.5 
-LA.FrontParamB = 0.5 
-LA.FrontSurface = Enum.SurfaceType.Smooth 
-LA.FrontSurfaceInput = Enum.InputType.NoInput 
-LA.LeftParamA = -0.5 
-LA.LeftParamB = 0.5 
-LA.LeftSurface = Enum.SurfaceType.Smooth 
-LA.LeftSurfaceInput = Enum.InputType.NoInput 
-LA.Locked = false 
-LA.Material = Enum.Material.Plastic 
-LA.Name = "LA" 
-LA.Orientation = Vector3.new(33.63999938964844, 65.2699966430664, 108.11000061035156) 
-LA.Parent = RigJoints 
-LA.Position = Vector3.new(-0.8766312599182129, 4.280706882476807, -8.999267578125) 
-LA.Reflectance = 0 
-LA.RightParamA = -0.5 
-LA.RightParamB = 0.5 
-LA.RightSurface = Enum.SurfaceType.Smooth 
-LA.RightSurfaceInput = Enum.InputType.NoInput 
-LA.RotVelocity = Vector3.new(0, 0, 0) 
-LA.Rotation = Vector3.new(57.849998474121094, 49.130001068115234, 57.849998474121094) 
-LA.Shape = Enum.PartType.Block 
-LA.Size = Vector3.new(1, 2, 1) 
-LA.TopParamA = -0.5 
-LA.TopParamB = 0.5 
-LA.TopSurface = Enum.SurfaceType.Studs 
-LA.TopSurfaceInput = Enum.InputType.NoInput 
-LA.Transparency = 1 
-LA.Velocity = Vector3.new(0, 0, 0) 
-RA.Anchored = false 
+RA.Anchored = false  
 RA.BackParamA = -0.5 
 RA.BackParamB = 0.5 
 RA.BackSurface = Enum.SurfaceType.Smooth 
@@ -86,11 +48,11 @@ RA.BottomParamA = -0.5
 RA.BottomParamB = 0.5 
 RA.BottomSurface = Enum.SurfaceType.Inlet 
 RA.BottomSurfaceInput = Enum.InputType.NoInput 
-RA.BrickColor = BrickColor.new("Bright yellow") 
-RA.CFrame = CFrame.new(0.09148961305618286, 4.492118835449219, -7.310499668121338)*CFrame.Angles(8.940713769334252e-08, 1, -1.6391308577112795e-07) 
+RA.BrickColor = BrickColor.new("Medium stone grey") 
+RA.CFrame = CFrame.new(15.540618896484375, 2.515308141708374, -1.831443190574646)*CFrame.Angles(-0.0008549013291485608, 0.9999991655349731, -0.0009570697438903153) 
 RA.CanCollide = false 
 RA.CollisionGroupId = "0" 
-RA.Color = Color3.new(0.960784, 0.803922, 0.188235) 
+RA.Color = Color3.new(0.639216, 0.635294, 0.647059) 
 RA.FrontParamA = -0.5 
 RA.FrontParamB = 0.5 
 RA.FrontSurface = Enum.SurfaceType.Smooth 
@@ -102,16 +64,16 @@ RA.LeftSurfaceInput = Enum.InputType.NoInput
 RA.Locked = false 
 RA.Material = Enum.Material.Plastic 
 RA.Name = "RA" 
-RA.Orientation = Vector3.new(89.88999938964844, -28.610000610351562, 164.0500030517578) 
+RA.Orientation = Vector3.new(90, -1, 0) 
 RA.Parent = RigJoints 
-RA.Position = Vector3.new(0.09148961305618286, 4.492118835449219, -7.310499668121338) 
+RA.Position = Vector3.new(15.540618896484375, 2.515308141708374, -1.831443190574646) 
 RA.Reflectance = 0 
 RA.RightParamA = -0.5 
 RA.RightParamB = 0.5 
 RA.RightSurface = Enum.SurfaceType.Smooth 
 RA.RightSurfaceInput = Enum.InputType.NoInput 
 RA.RotVelocity = Vector3.new(0, 0, 0) 
-RA.Rotation = Vector3.new(90, 0, 0) 
+RA.Rotation = Vector3.new(89.94999694824219, 0.05000000074505806, 1) 
 RA.Shape = Enum.PartType.Block 
 RA.Size = Vector3.new(1, 2, 1) 
 RA.TopParamA = -0.5 
@@ -129,11 +91,11 @@ Torso.BottomParamA = -0.5
 Torso.BottomParamB = 0.5 
 Torso.BottomSurface = Enum.SurfaceType.Inlet 
 Torso.BottomSurfaceInput = Enum.InputType.NoInput 
-Torso.BrickColor = BrickColor.new("Bright yellow") 
-Torso.CFrame = CFrame.new(-0.47550106048583984, 4, -7.3226776123046875)*CFrame.Angles(-0, -0, -1) 
-Torso.CanCollide = true 
+Torso.BrickColor = BrickColor.new("Medium stone grey") 
+Torso.CFrame = CFrame.new(14.839888572692871, 2.022397041320801, -2.030928611755371)*CFrame.Angles(0.017523115500807762, -0.0009419420966878533, -0.9998461008071899) 
+Torso.CanCollide = false 
 Torso.CollisionGroupId = "0" 
-Torso.Color = Color3.new(0.960784, 0.803922, 0.188235) 
+Torso.Color = Color3.new(0.639216, 0.635294, 0.647059) 
 Torso.FrontParamA = -0.5 
 Torso.FrontParamB = 0.5 
 Torso.FrontSurface = Enum.SurfaceType.Smooth 
@@ -145,16 +107,16 @@ Torso.LeftSurfaceInput = Enum.InputType.NoInput
 Torso.Locked = false 
 Torso.Material = Enum.Material.Plastic 
 Torso.Name = "Torso" 
-Torso.Orientation = Vector3.new(0, 0, 0) 
+Torso.Orientation = Vector3.new(-0.05000000074505806, -1, 0.05000000074505806) 
 Torso.Parent = RigJoints 
-Torso.Position = Vector3.new(-0.47550106048583984, 4, -7.3226776123046875) 
+Torso.Position = Vector3.new(14.839888572692871, 2.022397041320801, -2.030928611755371) 
 Torso.Reflectance = 0 
 Torso.RightParamA = 0 
 Torso.RightParamB = 0 
 Torso.RightSurface = Enum.SurfaceType.Weld 
 Torso.RightSurfaceInput = Enum.InputType.NoInput 
 Torso.RotVelocity = Vector3.new(0, 0, 0) 
-Torso.Rotation = Vector3.new(0, 0, 0) 
+Torso.Rotation = Vector3.new(-0.05000000074505806, -1, 0.05000000074505806) 
 Torso.Shape = Enum.PartType.Block 
 Torso.Size = Vector3.new(2, 2, 1) 
 Torso.TopParamA = -0.5 
@@ -162,17 +124,166 @@ Torso.TopParamB = 0.5
 Torso.TopSurface = Enum.SurfaceType.Studs 
 Torso.TopSurfaceInput = Enum.InputType.NoInput 
 Torso.Transparency = 1 
-Torso.Velocity = Vector3.new(0, 0, 0)  
+Torso.Velocity = Vector3.new(0, 0, 0) 
+LA.Anchored = false 
+LA.BackParamA = -0.5 
+LA.BackParamB = 0.5 
+LA.BackSurface = Enum.SurfaceType.Smooth 
+LA.BackSurfaceInput = Enum.InputType.NoInput 
+LA.BottomParamA = -0.5 
+LA.BottomParamB = 0.5 
+LA.BottomSurface = Enum.SurfaceType.Inlet 
+LA.BottomSurfaceInput = Enum.InputType.NoInput 
+LA.BrickColor = BrickColor.new("Medium stone grey") 
+LA.CFrame = CFrame.new(14.62367057800293, 2.6305198669433594, -3.674964189529419)*CFrame.Angles(-0.750442624092102, 0.5530344247817993, -0.36192378401756287) 
+LA.CanCollide = false 
+LA.CollisionGroupId = "0" 
+LA.Color = Color3.new(0.639216, 0.635294, 0.647059) 
+LA.FrontParamA = -0.5 
+LA.FrontParamB = 0.5 
+LA.FrontSurface = Enum.SurfaceType.Smooth 
+LA.FrontSurfaceInput = Enum.InputType.NoInput 
+LA.LeftParamA = -0.5 
+LA.LeftParamB = 0.5 
+LA.LeftSurface = Enum.SurfaceType.Smooth 
+LA.LeftSurfaceInput = Enum.InputType.NoInput 
+LA.Locked = false 
+LA.Material = Enum.Material.Plastic 
+LA.Name = "LA" 
+LA.Orientation = Vector3.new(33.58000183105469, 64.25, 108.08999633789062) 
+LA.Parent = RigJoints 
+LA.Position = Vector3.new(14.62367057800293, 2.6305198669433594, -3.674964189529419) 
+LA.Reflectance = 0 
+LA.RightParamA = -0.5 
+LA.RightParamB = 0.5 
+LA.RightSurface = Enum.SurfaceType.Smooth 
+LA.RightSurfaceInput = Enum.InputType.NoInput 
+LA.RotVelocity = Vector3.new(0, 0, 0) 
+LA.Rotation = Vector3.new(56.79999923706055, 48.630001068115234, 59.18000030517578) 
+LA.Shape = Enum.PartType.Block 
+LA.Size = Vector3.new(1, 2, 1) 
+LA.TopParamA = -0.5 
+LA.TopParamB = 0.5 
+LA.TopSurface = Enum.SurfaceType.Studs 
+LA.TopSurfaceInput = Enum.InputType.NoInput 
+LA.Transparency = 1 
+LA.Velocity = Vector3.new(0, 0, 0) 
+Gun.Anchored = false 
+Gun.BackParamA = -0.5 
+Gun.BackParamB = 0.5 
+Gun.BackSurface = Enum.SurfaceType.Smooth 
+Gun.BackSurfaceInput = Enum.InputType.NoInput 
+Gun.BottomParamA = -0.5 
+Gun.BottomParamB = 0.5 
+Gun.BottomSurface = Enum.SurfaceType.Smooth 
+Gun.BottomSurfaceInput = Enum.InputType.NoInput 
+Gun.BrickColor = BrickColor.new("Institutional white") 
+Gun.CFrame = CFrame.new(15.310922622680664, 2.852111577987671, -3.352128267288208)*CFrame.Angles(0.01752311922609806, -0.0009419422713108361, -0.9998461008071899) 
+Gun.CanCollide = false 
+Gun.CollisionGroupId = "0" 
+Gun.Color = Color3.new(0.972549, 0.972549, 0.972549) 
+Gun.FrontParamA = -0.5 
+Gun.FrontParamB = 0.5 
+Gun.FrontSurface = Enum.SurfaceType.Smooth 
+Gun.FrontSurfaceInput = Enum.InputType.NoInput 
+Gun.LeftParamA = -0.5 
+Gun.LeftParamB = 0.5 
+Gun.LeftSurface = Enum.SurfaceType.Smooth 
+Gun.LeftSurfaceInput = Enum.InputType.NoInput 
+Gun.Locked = false 
+Gun.Material = Enum.Material.Plastic 
+Gun.Name = "Gun" 
+Gun.Orientation = Vector3.new(-0.05000000074505806, -1, 5.050000190734863) 
+Gun.Parent = RigJoints 
+Gun.Position = Vector3.new(15.310922622680664, 2.852111577987671, -3.352128267288208) 
+Gun.Reflectance = 0 
+Gun.RightParamA = -0.5 
+Gun.RightParamB = 0.5 
+Gun.RightSurface = Enum.SurfaceType.Smooth 
+Gun.RightSurfaceInput = Enum.InputType.NoInput 
+Gun.RotVelocity = Vector3.new(0, 0, 0) 
+Gun.Rotation = Vector3.new(-0.05000000074505806, -1, 5.050000190734863) 
+Gun.Shape = Enum.PartType.Block 
+Gun.Size = Vector3.new(0.20000000298023224, 1.3700002431869507, 4.0400004386901855) 
+Gun.TopParamA = -0.5 
+Gun.TopParamB = 0.5 
+Gun.TopSurface = Enum.SurfaceType.Smooth 
+Gun.TopSurfaceInput = Enum.InputType.NoInput 
+Gun.Transparency = 0 
+Gun.Velocity = Vector3.new(0, 0, 0) 
+HatAdded.Anchored = false 
+HatAdded.BackParamA = -0.5 
+HatAdded.BackParamB = 0.5 
+HatAdded.BackSurface = Enum.SurfaceType.Smooth 
+HatAdded.BackSurfaceInput = Enum.InputType.NoInput 
+HatAdded.BottomParamA = -0.5 
+HatAdded.BottomParamB = 0.5 
+HatAdded.BottomSurface = Enum.SurfaceType.Smooth 
+HatAdded.BottomSurfaceInput = Enum.InputType.NoInput 
+HatAdded.BrickColor = BrickColor.new("Really black") 
+HatAdded.CFrame = CFrame.new(15.291098594665527, 3.0706138610839844, -3.4845898151397705)*CFrame.Angles(0.01752311922609806, -0.0009419419802725315, -0.9998461008071899) 
+HatAdded.CanCollide = false 
+HatAdded.CollisionGroupId = "0" 
+HatAdded.Color = Color3.new(0.0666667, 0.0666667, 0.0666667) 
+HatAdded.FrontParamA = -0.5 
+HatAdded.FrontParamB = 0.5 
+HatAdded.FrontSurface = Enum.SurfaceType.Smooth 
+HatAdded.FrontSurfaceInput = Enum.InputType.NoInput 
+HatAdded.LeftParamA = -0.5 
+HatAdded.LeftParamB = 0.5 
+HatAdded.LeftSurface = Enum.SurfaceType.Smooth 
+HatAdded.LeftSurfaceInput = Enum.InputType.NoInput 
+HatAdded.Locked = false 
+HatAdded.Material = Enum.Material.Plastic 
+HatAdded.Name = "HatAdded" 
+HatAdded.Orientation = Vector3.new(-0.05000000074505806, -1, 5.050000190734863) 
+HatAdded.Parent = RigJoints 
+HatAdded.Position = Vector3.new(15.291098594665527, 3.0706138610839844, -3.4845898151397705) 
+HatAdded.Reflectance = 0 
+HatAdded.RightParamA = -0.5 
+HatAdded.RightParamB = 0.5 
+HatAdded.RightSurface = Enum.SurfaceType.Smooth 
+HatAdded.RightSurfaceInput = Enum.InputType.NoInput 
+HatAdded.RotVelocity = Vector3.new(0, 0, 0) 
+HatAdded.Rotation = Vector3.new(-0.05000000074505806, -1, 5.050000190734863) 
+HatAdded.Shape = Enum.PartType.Block 
+HatAdded.Size = Vector3.new(1, 1, 2) 
+HatAdded.TopParamA = -0.5 
+HatAdded.TopParamB = 0.5 
+HatAdded.TopSurface = Enum.SurfaceType.Smooth 
+HatAdded.TopSurfaceInput = Enum.InputType.NoInput 
+HatAdded.Transparency = 1 
+HatAdded.Velocity = Vector3.new(0, 0, 0)  
+WeldConstraint1.Enabled = true 
 WeldConstraint1.Name = "WeldConstraint1" 
 WeldConstraint1.Parent = Torso 
 WeldConstraint1.Part0 = Torso 
 WeldConstraint1.Part1 = RA 
-WeldConstraint.Enabled = true
-WeldConstraint1.Enabled = true
+WeldConstraint2.Archivable = true 
+WeldConstraint2.Enabled = true 
+WeldConstraint2.Name = "WeldConstraint2" 
+WeldConstraint2.Parent = Torso 
+WeldConstraint2.Part0 = Torso 
+WeldConstraint2.Part1 = LA 
+Mesh.MeshId = "http://www.roblox.com/asset/?id=3824749" 
+Mesh.MeshType = Enum.MeshType.FileMesh 
+Mesh.Name = "Mesh" 
+Mesh.Offset = Vector3.new(0, 0, 0) 
+Mesh.Parent = Gun 
+Mesh.Scale = Vector3.new(2, 1.2999999523162842, 1.100000023841858) 
+Mesh.TextureId = "http://www.roblox.com/asset/?id=159740858" 
+Mesh.VertexColor = Vector3.new(0.699999988079071, 0.699999988079071, 0.699999988079071) 
+WeldConstraint3.Enabled = true 
+WeldConstraint3.Name = "WeldConstraint3" 
+WeldConstraint3.Parent = Gun 
+WeldConstraint3.Part0 = Gun 
+WeldConstraint3.Part1 = Torso 
+WeldConstraint.Archivable = true 
+WeldConstraint.Enabled = true 
 WeldConstraint.Name = "WeldConstraint" 
-WeldConstraint.Parent = Torso 
-WeldConstraint.Part0 = Torso 
-WeldConstraint.Part1 = LA
+WeldConstraint.Parent = HatAdded 
+WeldConstraint.Part0 = HatAdded 
+WeldConstraint.Part1 = Torso
 local Weld = Instance.new("Weld")
 Weld.Part0 = Torso
 Weld.Part1 = game.Players.LocalPlayer.Character.Torso
@@ -182,6 +293,7 @@ game:GetService("RunService").Heartbeat:Connect(function()
     if can == false then
         game.Players.LocalPlayer.Character["Left Arm"]["att1_Left Arm"].WorldCFrame = LA.CFrame
         game.Players.LocalPlayer.Character["Right Arm"]["att1_Right Arm"].WorldCFrame = RA.CFrame
+	game.Players.LocalPlayer.Character["Pal Hair"]["att1_Pal Hair"].WorldCFrame = HatAdded.CFrame
     end
 end)
 game.Players.LocalPlayer.CharacterAdded:Connect(function(a)
@@ -189,7 +301,7 @@ game.Players.LocalPlayer.CharacterAdded:Connect(function(a)
 end)
 --Now BodyLook--
 local Body = Instance.new("BodyGyro")
-Body.P = 9000
+Body.P = 6000
 Body.D = 0
 Body.Parent = game.Players.LocalPlayer.Character.Torso
 game["Run Service"].Heartbeat:Connect(function()
@@ -202,9 +314,65 @@ Mouse:Connect(function(a)
 	if Added == false then
 		game.Players.LocalPlayer.Character.HumanoidRootPart.att1_HumanoidRootPart.WorldCFrame = game.Players.LocalPlayer:GetMouse().Hit
 		wait(0.2) 
-		game.Players.LocalPlayer.Character.HumanoidRootPart.att1_HumanoidRootPart.Position = Vector3.new(0,5,0)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.att1_HumanoidRootPart.Position = Vector3.new(0,0,0)
 	end		
 end)
 game.Players.LocalPlayer.CharacterAdded:Connect(function(a)
     Added = true
 end)
+
+local High = Instance.new("Highlight")
+High.OutlineTransparency = 1
+High.Parent = game.Players.LocalPlayer.Character.Model.HumanoidRootPart
+local text = High
+local add = 30
+local k = 1
+while k <= 255 do
+	text.FillColor = Color3.new(k/255,0/255,0/255)
+	k = k + add
+	wait()
+end
+while true do
+	k = 1
+	while k <= 255 do
+		text.FillColor = Color3.new(255/255,k/255,0/255)
+		k = k + add
+		wait()
+	end
+	k = 1
+	while k <= 255 do
+		text.FillColor = Color3.new(255/255 - k/255,255/255,0/255)
+		k = k + add
+		wait()
+	end
+	k = 1
+	while k <= 255 do
+		text.FillColor = Color3.new(0/255,255/255,k/255)
+		k = k + add
+		wait()
+	end
+	k = 1
+	while k <= 255 do
+		text.FillColor = Color3.new(0/255,255/255 - k/255,255/255)
+		k = k + add
+		wait()
+	end
+	k = 1
+	while k <= 255 do
+		text.FillColor = Color3.new(k/255,0/255,255/255)
+		k = k + add
+		wait()
+	end
+	k = 1
+	while k <= 255 do
+		text.FillColor = Color3.new(255/255,0/255,255/255 - k/255)
+		k = k + add
+		wait()
+	end
+	while k <= 255 do
+		text.FillColor = Color3.new(255/255 - k/255,0/255,0/255)
+		k = k + add
+		wait()
+	end
+end
+
